@@ -1,0 +1,282 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #0f0c29;
+    background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+header {
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 1rem 0;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0.5rem;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: background 0.3s;
+}
+
+nav ul li a:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+}
+
+section {
+    padding: 2rem;
+    text-align: center;
+    width: 100%;
+}
+
+.event {
+    margin: 1rem 0;
+    padding: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+}
+
+.event:hover {
+    transform: translateY(-5px);
+}
+
+#contact-form {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 1.5rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+    max-width: 400px;
+    margin: 2rem auto;
+    transition: transform 0.3s;
+}
+
+#contact-form:hover {
+    transform: translateY(-5px);
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #f5576c;
+}
+
+button {
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(90deg, #f093fb, #f5576c);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background: linear-gradient(90deg, #f5576c, #f093fb);
+    transform: translateY(-2px);
+}
+
+footer {
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    width: 100%;
+}
+
+/* Neon glow effect */
+h1, h2, h3, p, label, a {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7), 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+/* Parallax background */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('./pic/pic40.jpg') no-repeat center center/cover;
+    z-index: -1;
+    filter: blur(10px);
+    transform: scale(1.1);
+    transition: transform 0.3s, filter 0.3s;
+}
+
+body:hover::before {
+    transform: scale(1.05);
+    filter: blur(8px);
+}
+
+.imageChange {
+    max-width: 328px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.open-modal-btn {
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    position: relative;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.modal__inner {
+    width: 400px;
+    position: relative;
+    top: 50%;
+    margin: auto;
+    background: white;
+    border-radius: 5px;
+    overflow: hidden;
+    animation: modalshow 0.2s linear;
+}
+
+.modal__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: #0f0c29;
+    color: white;
+}
+
+.modal__boby {
+    padding: 15px;
+    color: #0f0c29;
+}
+
+.modal__footer {
+    padding: 15px;
+    text-align: right;
+}
+
+.modal__footer button {
+    padding: 10px 20px;
+    color: white;
+    background: #0f0c29;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.hide {
+    display: none;
+}
+
+@keyframes modalshow {
+    from {
+        top: -200px;
+        opacity: 0;
+    }
+    to {
+        top: 50%;
+        opacity: 1;
+    }
+}
+
+.vd{
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}
+/* Media Queries for iPhone 13 Mini */
+@media (max-width: 375px) {
+    header, nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 0.3rem 0;
+    }
+
+    section {
+        padding: 1rem;
+    }
+
+    .event {
+        margin: 0.5rem 0;
+        padding: 0.5rem;
+    }
+
+    #contact-form {
+        padding: 1rem;
+        max-width: 90%;
+    }
+
+    form input, form textarea {
+        width: 100%;
+        font-size: 0.9rem;
+    }
+
+    form button {
+        width: 100%;
+        font-size: 0.9rem;
+    }
+
+    .modal__inner {
+        width: 90%;
+    }
+
+    .modal__header, .modal__body, .modal__footer {
+        padding: 1rem;
+    }
+}
